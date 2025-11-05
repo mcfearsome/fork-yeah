@@ -13,11 +13,11 @@ export MAGENTA='\033[0;35m'
 export NC='\033[0m'
 
 # Print functions
-print_error() { echo -e "${RED}✗ $@${NC}" >&2; }
-print_success() { echo -e "${GREEN}✓ $@${NC}"; }
-print_warning() { echo -e "${YELLOW}⚠ $@${NC}"; }
-print_info() { echo -e "${BLUE}ℹ $@${NC}"; }
-print_step() { echo -e "${CYAN}→ $@${NC}"; }
+print_error() { echo -e "${RED}✗ $@"${NC}" >&2; }
+print_success() { echo -e "${GREEN}✓ $@"${NC}"; }
+print_warning() { echo -e "${YELLOW}⚠ $@"${NC}"; }
+print_info() { echo -e "${BLUE}ℹ $@"${NC}"; }
+print_step() { echo -e "${CYAN}→ $@"${NC}"; }
 
 # Export for use in other scripts
 export -f print_error
