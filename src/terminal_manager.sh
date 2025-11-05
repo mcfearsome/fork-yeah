@@ -128,7 +128,7 @@ EOF
 
     # Replace placeholders
     sed -i "s|%FORK_ID%|$fork_id|g" "$launcher_path"
-    sed -i "s|%WORKTREE_PATH%|$worktree_path|g" "$launcher_path"
+    sed -i '' "s|%WORKTREE_PATH%|$worktree_path|g" "$launcher_path" 2>/dev/null || sed -i "s|%WORKTREE_PATH%|$worktree_path|g" "$launcher_path"
 
     chmod +x "$launcher_path"
 }
