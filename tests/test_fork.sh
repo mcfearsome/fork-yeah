@@ -20,9 +20,9 @@ TESTS_PASSED=0
 TESTS_FAILED=0
 
 # Print functions
-print_test() { echo -e "${BLUE}[TEST]${NC} $@"; }
-print_pass() { echo -e "${GREEN}[PASS]${NC} $@"; ((TESTS_PASSED++)); }
-print_fail() { echo -e "${RED}[FAIL]${NC} $@"; ((TESTS_FAILED++)); }
+print_test() { echo -e "${BLUE}[TEST]${NC} \"$@\""; }
+print_pass() { echo -e "${GREEN}[PASS]${NC} \"$@\""; ((TESTS_PASSED++)); }
+print_fail() { echo -e "${RED}[FAIL]${NC} \"$@\""; ((TESTS_FAILED++)); }
 
 # Run a test
 run_test() {
