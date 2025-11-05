@@ -1,0 +1,40 @@
+{
+  "name": "mcfearsome",
+  "owner": {
+    "name": "mcfearsome",
+    "email": "mcfearsome@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "fork-yeah",
+      "source": ".",
+      "description": "Fork management for Claude Code - branch conversation paths and try different approaches simultaneously using git worktrees",
+      "version": "0.1.0",
+      "author": {
+        "name": "mcfearsome"
+      },
+      "homepage": "https://github.com/mcfearsome/fork-yeah",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mcfearsome/fork-yeah.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "git",
+        "worktree",
+        "branching",
+        "fork",
+        "conversation",
+        "workflow",
+        "productivity"
+      ],
+      "category": "development-tools",
+      "tags": [
+        "git",
+        "workflow",
+        "productivity",
+        "branching"
+      ]
+    }
+  ]
+}
