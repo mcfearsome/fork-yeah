@@ -161,10 +161,13 @@ Want to contribute a plugin to this marketplace?
 2. **Create your plugin** following the structure:
    ```
    your-plugin/
-   ├── SKILL.md         # Plugin definition
+   ├── SKILL.md         # Agent skill definition
+   ├── commands/        # Slash command definitions
+   │   ├── create.md
+   │   └── list.md
    ├── setup.sh         # Installation script
    ├── README.md        # Documentation
-   └── src/             # Plugin code
+   └── src/             # Plugin scripts/code
    ```
 3. **Update marketplace.yaml** to include your plugin
 4. **Submit a pull request**

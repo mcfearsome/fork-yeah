@@ -276,6 +276,33 @@ display:
 └── tmux.conf                  # tmux settings
 ```
 
+## How the Plugin Works
+
+fork-yeah integrates with Claude Code through two mechanisms:
+
+### 1. Slash Commands (`commands/` directory)
+
+User-invoked commands that you type explicitly:
+- `/fork create 3` - Create forks
+- `/fork list` - List all forks
+- `/fork switch <id>` - Switch forks
+- `/fork tree` - View hierarchy
+- `/fork status` - Check status
+- `/fork merge <id>` - Merge forks
+- `/fork delete <id>` - Delete forks
+
+These appear in Claude Code's `/help` menu and can be called directly by users.
+
+### 2. Agent Skill (`SKILL.md`)
+
+Proactive fork management by Claude:
+- Claude automatically suggests forking when exploring multiple approaches
+- Recognizes when conversation branching would be helpful
+- Manages forks intelligently based on conversation context
+- Uses the skill instructions to make decisions about when and how to fork
+
+**Example**: If you say "Let's try both REST and GraphQL approaches," Claude may proactively suggest or use `/fork create 2 --target api-design` without you explicitly asking for it.
+
 ## Requirements
 
 ### Required
