@@ -92,9 +92,12 @@ test_terminal_manager() {
     type is_tmux_available > /dev/null 2>&1
 }
 
-# Test: skill.yaml is valid YAML
-test_skill_yaml_valid() {
-    python3 -c "import yaml; yaml.safe_load(open('$PROJECT_ROOT/skill.yaml'))" 2>/dev/null
+# Test: SKILL.md exists and has valid frontmatter
+test_skill_md_valid() {
+    [ -f "$PROJECT_ROOT/SKILL.md" ] && \
+    grep -q "^---$" "$PROJECT_ROOT/SKILL.md" && \
+    grep -q "^name:" "$PROJECT_ROOT/SKILL.md" && \
+    grep -q "^description:" "$PROJECT_ROOT/SKILL.md"
 }
 
 # Test: config.yaml is valid YAML
@@ -123,7 +126,7 @@ main() {
     run_test "State manager list" test_state_manager_list
     run_test "State manager create/delete" test_state_manager_create_delete
     run_test "Terminal manager loads" test_terminal_manager
-    run_test "skill.yaml is valid" test_skill_yaml_valid
+    run_test "SKILL.md is valid" test_skill_md_valid
     run_test "config.yaml is valid" test_config_yaml_valid
     run_test "Documentation exists" test_documentation
 
