@@ -14,6 +14,9 @@ Fork-yeah enables you to create parallel branches of your Claude Code conversati
 - **Visual Fork Tree**: See your fork hierarchy at a glance
 - **Cross-Platform**: Works on Linux, macOS, and Windows (WSL)
 
+> **Part of the mcfearsome marketplace** - Quality plugins for Claude Code
+> See [MARKETPLACE.md](MARKETPLACE.md) for more plugins and marketplace information.
+
 ## Quick Start
 
 ### Installation
