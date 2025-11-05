@@ -23,22 +23,21 @@ cd fork-yeah
 
 ---
 
-### Option 2: Marketplace Integration (Future)
+### Option 2: Marketplace Integration
 
-When Claude Code supports plugin marketplaces, you'll be able to:
+Add the marketplace to Claude Code:
 
 ```bash
 # Add the marketplace
-claude plugins marketplace add mcfearsome https://github.com/mcfearsome/fork-yeah
+claude plugin marketplace add https://github.com/mcfearsome/fork-yeah
 
-# Browse plugins
-claude plugins marketplace search
+# List available plugins
+claude plugin list
 
-# Install from marketplace
-claude plugins marketplace install fork-yeah
+# The fork-yeah plugin is now available
 ```
 
-*Note: Check Claude Code documentation for current marketplace support.*
+After adding the marketplace, the plugin will be integrated with Claude Code.
 
 ---
 

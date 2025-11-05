@@ -45,17 +45,16 @@ The setup script will:
 
 ### Method 2: Add Marketplace to Claude Code
 
-If Claude Code supports marketplace URLs, you can add this marketplace:
+Add this marketplace to Claude Code:
 
 ```bash
 # Add mcfearsome marketplace
-claude-code marketplace add mcfearsome https://github.com/mcfearsome/fork-yeah
+claude plugin marketplace add https://github.com/mcfearsome/fork-yeah
 
 # List available plugins
-claude-code marketplace search mcfearsome
+claude plugin list
 
-# Install a plugin
-claude-code marketplace install fork-yeah
+# The fork-yeah plugin will now be available from this marketplace
 ```
 
 ### Method 3: Manual Installation
@@ -161,15 +160,17 @@ Want to contribute a plugin to this marketplace?
 2. **Create your plugin** following the structure:
    ```
    your-plugin/
-   ├── SKILL.md         # Agent skill definition
-   ├── commands/        # Slash command definitions
+   ├── .claude-plugin/          # Claude Code marketplace config
+   │   └── marketplace.json
+   ├── SKILL.md                 # Agent skill definition
+   ├── commands/                # Slash command definitions
    │   ├── create.md
    │   └── list.md
-   ├── setup.sh         # Installation script
-   ├── README.md        # Documentation
-   └── src/             # Plugin scripts/code
+   ├── setup.sh                 # Installation script
+   ├── README.md                # Documentation
+   └── src/                     # Plugin scripts/code
    ```
-3. **Update marketplace.yaml** to include your plugin
+3. **Update .claude-plugin/marketplace.json** to include your plugin
 4. **Submit a pull request**
 
 **Plugin Requirements:**
