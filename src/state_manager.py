@@ -135,24 +135,25 @@ class StateManager:
         forks = self.list_forks()
         tree = {"root": {"children": [], "metadata": {}}}
 
-        # Build parent-child relationships
-        fork_map = {fork["fork_id"]: fork for fork in forks}
-
+        # Build a mapping from fork_id to tree node
+        node_map = {}
         for fork in forks:
-            parent_id = fork.get("parent_id")
+            node_map[fork["fork_id"]] = {
+                "fork_id": fork["fork_id"],
+                "children": [],
+                "metadata": fork
+            }
 
+        # Attach nodes to their parents, or to root if no parent
+        for fork in forks:
+            node = node_map[fork["fork_id"]]
+            parent_id = fork.get("parent_id")
             if not parent_id:
-                # Root fork
-                tree["root"]["children"].append(
-                    {"fork_id": fork["fork_id"], "children": [], "metadata": fork}
-                )
+                tree["root"]["children"].append(node)
             else:
-                # Find parent and add as child
-                parent = fork_map.get(parent_id)
-                if parent:
-                    # This would need recursive tree building
-                    # Simplified for now
-                    pass
+                parent_node = node_map.get(parent_id)
+                if parent_node:
+                    parent_node["children"].append(node)
 
         return tree
 
