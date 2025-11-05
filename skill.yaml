@@ -1,0 +1,84 @@
+name: fork-yeah
+version: 0.1.0
+description: Fork management for Claude Code - branch conversation paths and try different approaches
+
+commands:
+  - name: fork-create
+    description: Create N parallel fork branches from the current conversation checkpoint
+    usage: /fork create <number> [--target <branch_name>]
+    script: src/fork_create.sh
+    args:
+      - name: number
+        type: integer
+        required: true
+        description: Number of parallel branches to create
+      - name: --target
+        type: string
+        required: false
+        description: Target branch name (all forks will merge to this branch)
+
+  - name: fork-list
+    description: List all active fork branches
+    usage: /fork list
+    script: src/fork_list.sh
+
+  - name: fork-switch
+    description: Switch to a different fork branch
+    usage: /fork switch <branch_id>
+    script: src/fork_switch.sh
+    args:
+      - name: branch_id
+        type: string
+        required: true
+        description: ID or name of the fork branch to switch to
+
+  - name: fork-tree
+    description: Visualize the fork hierarchy as a tree
+    usage: /fork tree
+    script: src/fork_tree.sh
+
+  - name: fork-merge
+    description: Merge changes from another fork branch
+    usage: /fork merge <branch_id>
+    script: src/fork_merge.sh
+    args:
+      - name: branch_id
+        type: string
+        required: true
+        description: ID or name of the fork branch to merge from
+
+  - name: fork-delete
+    description: Delete a fork branch and its worktree
+    usage: /fork delete <branch_id>
+    script: src/fork_delete.sh
+    args:
+      - name: branch_id
+        type: string
+        required: true
+        description: ID or name of the fork branch to delete
+
+  - name: fork-status
+    description: Show status of current fork and conversation state
+    usage: /fork status
+    script: src/fork_status.sh
+
+dependencies:
+  required:
+    - git
+    - python3
+    - jq
+  optional:
+    - tmux
+
+config:
+  data_dir: ~/.claude-code/forks
+  config_file: ~/.config/fork-yeah/config.yaml
+  tmux_config: ~/.config/fork-yeah/tmux.conf
+
+features:
+  - Git worktree management
+  - Conversation state checkpointing
+  - Nested fork support
+  - Terminal multiplexing with tmux
+  - Fallback modes for non-tmux environments
+  - Visual tree representation of fork hierarchy

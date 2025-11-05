@@ -1,0 +1,90 @@
+# fork-yeah Configuration
+
+# Data directory for fork storage
+data_dir: ~/.claude-code/forks
+
+# Terminal multiplexer preferences
+terminal:
+  # Preferred mode: tmux, macos, linux, basic
+  # If set to 'auto', will auto-detect based on system
+  mode: auto
+
+  # tmux-specific settings
+  tmux:
+    # Session prefix for fork sessions
+    session_prefix: fork-
+
+    # Default layout for multi-fork sessions
+    # Options: even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+    default_layout: tiled
+
+    # Start tmux server if not running
+    auto_start: true
+
+    # Automatically attach after creating forks
+    auto_attach: false
+
+# Fork creation settings
+fork:
+  # Maximum number of forks that can be created at once
+  max_forks: 10
+
+  # Automatically create checkpoint when forking
+  auto_checkpoint: true
+
+  # Include git status in checkpoint
+  include_git_status: true
+
+  # Prompt for confirmation before creating multiple forks
+  confirm_multiple: true
+
+# Git worktree settings
+worktree:
+  # Base directory for worktrees (relative to fork data dir)
+  base_dir: worktree
+
+  # Automatically clean up worktrees on fork deletion
+  auto_cleanup: true
+
+  # Force worktree removal even if there are uncommitted changes
+  force_remove: false
+
+# Checkpoint settings
+checkpoint:
+  # Save conversation history in checkpoints
+  save_conversation: true
+
+  # Maximum conversation history items to save
+  max_history_items: 100
+
+  # Compress checkpoint data
+  compress: false
+
+  # Include environment variables in checkpoint
+  save_environment: false
+
+# Display settings
+display:
+  # Use colored output
+  use_colors: true
+
+  # Show fork tree with ASCII art
+  tree_ascii: true
+
+  # Date format for timestamps
+  # Options: iso, relative, short
+  date_format: iso
+
+  # Show detailed information in list view
+  detailed_list: true
+
+# Logging settings
+logging:
+  # Enable logging
+  enabled: false
+
+  # Log file location
+  log_file: ~/.claude-code/forks/fork-yeah.log
+
+  # Log level: debug, info, warning, error
+  level: info
