@@ -161,7 +161,7 @@ Want to contribute a plugin to this marketplace?
 2. **Create your plugin** following the structure:
    ```
    your-plugin/
-   ├── skill.yaml       # Plugin definition
+   ├── SKILL.md         # Plugin definition
    ├── setup.sh         # Installation script
    ├── README.md        # Documentation
    └── src/             # Plugin code
