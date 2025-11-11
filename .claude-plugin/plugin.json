@@ -1,0 +1,28 @@
+{
+  "name": "fork-yeah",
+  "version": "0.1.0",
+  "description": "Fork management for Claude Code - branch conversation paths and try different approaches simultaneously using git worktrees",
+  "author": {
+    "name": "mcfearsome"
+  },
+  "homepage": "https://github.com/mcfearsome/fork-yeah",
+  "repository": "https://github.com/mcfearsome/fork-yeah.git",
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "worktree",
+    "branching",
+    "fork",
+    "conversation",
+    "workflow",
+    "productivity"
+  ],
+  "commands": [
+    "./commands/fork-new.md",
+    "./commands/fork-list.md",
+    "./commands/fork-switch.md",
+    "./commands/fork-merge.md",
+    "./commands/fork-delete.md",
+    "./commands/fork-status.md"
+  ]
+}
